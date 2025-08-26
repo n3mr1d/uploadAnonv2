@@ -2,17 +2,23 @@
 
 namespace App\View\Components;
 
-use Closure;
 use App\Models\Files;
 use App\Models\Pastebin;
-use Illuminate\View\Component;
+use App\Models\Visitor;
+use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
 
 class Footer extends Component
 {
     public $files;
+
     public $total;
+
+    public $viewer;
+
     public $pastebin;
+
     /**
      * Create a new component instance.
      */
@@ -20,6 +26,7 @@ class Footer extends Component
     {
         $this->files = Files::count();
         $this->pastebin = Pastebin::count();
+        $this->viewer = Visitor::count();
         $this->total = $this->total + $this->pastebin;
 
     }

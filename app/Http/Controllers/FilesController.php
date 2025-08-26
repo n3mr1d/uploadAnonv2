@@ -122,12 +122,12 @@ class FilesController extends Controller
 
             return redirect()->route('show.files', ['uuid' => $fileData['uuid']])
                 ->with([
-                    'success' => 'Upload file ' . $fileData['original_name'] . ' berhasil.',
+                    'success' => 'Upload file ' . $fileData['original_name'] . ' success.',
                     'delete_token' => $fileData['delete_token']
                 ]);
         } else {
             return redirect()->route('show.bulk', [$bulkId])
-                ->with('success', 'Upload ' . $totalFiles . ' file berhasil.');
+                ->with('success', 'Upload ' . $totalFiles . ' file success.');
         }
     }
 
@@ -175,7 +175,7 @@ class FilesController extends Controller
         if (!Storage::disk('public')->exists($imagePath)) {
             abort(404, 'Image file not found in storage');
         }
-        $url = url('/storage/app/public/' . $imagePath);
+        $url = config('app.url') . '/storage/app/public/' . $imagePath;
 
         if ($file->password) {
             $cookieKey = 'files_password_' . $uuid;

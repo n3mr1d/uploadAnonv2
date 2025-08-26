@@ -6,6 +6,47 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
+/**
+ * @property int $id
+ * @property string $uuid
+ * @property string $stored_name
+ * @property string $original
+ * @property string $mime_type
+ * @property int $size
+ * @property string $extension
+ * @property string|null $password
+ * @property int $download_count
+ * @property int $view_count
+ * @property string|null $uploader_ip
+ * @property string|null $delete_token
+ * @property string|null $expires_at
+ * @property string|null $bulk_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files expired()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files notExpired()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files public()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereBulkId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereDeleteToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereDownloadCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereExpiresAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereExtension($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereMimeType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereOriginal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereSize($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereStoredName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereUploaderIp($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereUuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Files whereViewCount($value)
+ * @mixin \Eloquent
+ */
 class Files extends Model
 {
     // Table name
