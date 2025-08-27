@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Files;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,8 +45,11 @@ class AdminPost extends Controller
     // Tampilkan dashboard admin (harus login)
     public function showDashboard()
     {
+        $dataFiles = Files::get();
+
         return view('admin.dashboard', [
             'title' => 'Dashboard',
+            'dataFiles' => $dataFiles,
         ]);
     }
 
@@ -60,4 +64,8 @@ class AdminPost extends Controller
         return redirect('/admin')->with('success', 'logout success goodbye');
 
     }
+
+   
+
+
 }
